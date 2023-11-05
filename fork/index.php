@@ -9,14 +9,14 @@ define("IS_WGET", str_contains(USER_AGENT, "Wget"));
 # Use release2 if NEOS, else release3 (careful! wget assumes comma three)
 define("DEFAULT_STOCK_BRANCH", IS_NEOS ? "release2" : "release3");
 
-define("WEBSITE_URL", "https://smiskol.com");
+define("WEBSITE_URL", "https://nmk.sa");
 define("BASE_DIR", "/" . basename(__DIR__));
 
 function logData() {
     global $url;
     global $username;
     global $branch;
-    date_default_timezone_set('America/Chicago');
+    date_default_timezone_set('Asia/Riyadh');
 
     $data = array("IP" => $_SERVER['REMOTE_ADDR'], "url" => $url, "username" => $username, "branch" => $branch, "is_neos" => IS_NEOS, "is_agnos" => IS_AGNOS, "is_wget" => IS_WGET, "user_agent" => USER_AGENT, "date" => date("Y-m-d_H:i:s",time()));
     $data = json_encode($data);
@@ -54,7 +54,9 @@ class Alias {
 # Handle aliases
 $aliases = [new Alias("dragonpilot-community", "0.8.13", ["dragonpilot", "dp"], "", "dragonpilot"),
             new Alias("commaai", DEFAULT_STOCK_BRANCH, ["stock", "commaai"], "", "openpilot"),
-            new Alias("sshane", "SA-master", ["shane", "smiskol", "sa", "sshane"], "", "Stock Additions")];
+            new Alias("sshane", "SA-master", ["shane", "smiskol", "sa", "sshane"], "", "Stock Additions"),
+	    new Alias("openpilotkr", "OPKR", ["opkr", "openpilotkr", "op"], "", "openpilotkr"),
+	    new Alias("nmk-ai", "nmk", ["beta2", "dev-c3", "beta3"], "", "release3")];
 foreach ($aliases as $al) {
     if (in_array($username, $al->aliases)) {
         $username = $al->name;
