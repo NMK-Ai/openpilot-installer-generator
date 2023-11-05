@@ -103,7 +103,7 @@ button:active[name="download_agnos"] {border-radius: 4px; border: 5px; padding: 
 <link rel="icon" type="image/x-icon" href="' . BASE_DIR . '/favicon.ico">
 </head>';
 
-echo '</br></br><a href="' . BASE_DIR . '"><h1 style="color: #30323D;">🍴 openpilot fork installer generator-inator 🍴</h1></a>';
+echo '</br></br><a href="' . BASE_DIR . '"><h1 style="color: #30323D;"> أهلا وسهلا بك في صفحة تحميل القائد الآلي </h1></a>';
 echo '<h3 style="position: absolute; bottom: 0; left: 0; width: 100%; text-align: center;"><a href="https://github.com/sshane/openpilot-installer-generator" style="color: 30323D;">💾 Installer Generator GitHub Repo</a></h3>';
 
 if ($username == "") {
